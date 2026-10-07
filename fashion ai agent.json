@@ -1,0 +1,384 @@
+{
+  "name": "fashion ai agent",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Fashion Recommender ",
+        "formDescription": "This small questionnaire helps you choose the perfect fit for any of your upcoming events. ",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Occasion",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Navratri"
+                  },
+                  {
+                    "option": "Diwali"
+                  },
+                  {
+                    "option": "Wedding"
+                  },
+                  {
+                    "option": "Birthday"
+                  },
+                  {
+                    "option": "Christmas"
+                  },
+                  {
+                    "option": "Date night"
+                  },
+                  {
+                    "option": "Girls night stay"
+                  },
+                  {
+                    "option": "Picnic "
+                  },
+                  {
+                    "option": "casual everyday"
+                  },
+                  {
+                    "option": "beach wear"
+                  }
+                ]
+              }
+            },
+            {
+              "fieldLabel": "Style",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Traditional"
+                  },
+                  {
+                    "option": "Modern "
+                  },
+                  {
+                    "option": "Classy"
+                  },
+                  {
+                    "option": "Soft girl era"
+                  },
+                  {
+                    "option": "Black Cat "
+                  },
+                  {
+                    "option": "Bossy "
+                  },
+                  {
+                    "option": "College wear"
+                  },
+                  {
+                    "option": "feminine"
+                  },
+                  {
+                    "option": "Party"
+                  }
+                ]
+              }
+            },
+            {
+              "fieldLabel": "Preferred colours ",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Teal"
+                  },
+                  {
+                    "option": "Rani Pink"
+                  },
+                  {
+                    "option": "Butter yellow"
+                  },
+                  {
+                    "option": "Black"
+                  },
+                  {
+                    "option": "white "
+                  },
+                  {
+                    "option": "Beige"
+                  },
+                  {
+                    "option": "Lavender "
+                  },
+                  {
+                    "option": "Orange"
+                  },
+                  {
+                    "option": "Red"
+                  },
+                  {
+                    "option": "Brown"
+                  },
+                  {
+                    "option": "Light blue"
+                  },
+                  {
+                    "option": "Burgundy"
+                  },
+                  {
+                    "option": "Emrald green"
+                  },
+                  {
+                    "option": "Pastel Pink"
+                  },
+                  {
+                    "option": "Chocolate brown"
+                  },
+                  {
+                    "option": "Cream white "
+                  },
+                  {
+                    "option": "Olive"
+                  },
+                  {
+                    "option": "Denim blue"
+                  },
+                  {
+                    "option": "Sage green "
+                  },
+                  {
+                    "option": "Charcoal grey"
+                  },
+                  {
+                    "option": "Grey"
+                  },
+                  {
+                    "option": "Mustard"
+                  },
+                  {
+                    "option": "Terracotta"
+                  },
+                  {
+                    "option": "Ivory"
+                  }
+                ]
+              }
+            },
+            {
+              "fieldLabel": "Budget",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Under 500"
+                  },
+                  {
+                    "option": "500-1000"
+                  },
+                  {
+                    "option": "1200-2000"
+                  },
+                  {
+                    "option": "2000-3500"
+                  }
+                ]
+              }
+            },
+            {
+              "fieldLabel": "Weather",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Summer "
+                  },
+                  {
+                    "option": "Autumn"
+                  },
+                  {
+                    "option": "Spring"
+                  },
+                  {
+                    "option": "Cold"
+                  },
+                  {
+                    "option": "Rainy"
+                  },
+                  {
+                    "option": "Warm"
+                  },
+                  {
+                    "option": "Mild"
+                  }
+                ]
+              }
+            },
+            {
+              "fieldLabel": "Extra preferences",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "I want something comfortable"
+                  },
+                  {
+                    "option": "I want something that has detailed threadwork"
+                  },
+                  {
+                    "option": "I want something that keeps me warm but at the same time looks exceptional"
+                  },
+                  {
+                    "option": "I want something with indian artwork printed on it"
+                  },
+                  {
+                    "option": "I want some traditional with a touch of modern "
+                  },
+                  {
+                    "option": "I want a perfect fit for the girls brunch"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.6,
+      "position": [
+        -128,
+        0
+      ],
+      "id": "f0e4fd23-4b2c-4e1f-b49a-8292fd4faf04",
+      "name": "On form submission",
+      "webhookId": "01df3364-7161-4c03-bb6e-978f8e1fb56e"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a professional AI fashion stylist.\n\nYour job is to recommend outfits based on the user's preferences from the form.\n\nConsider:\n- Occasion\n- Preferred style\n- Preferred colours\n- Budget\n- Weather\n- Any extra preferences\n\nRecommend an outfit using only the clothing items available in the user's wardrobe/catalogue.\n\nIMPORTANT:\nYou have access to an Available clothes catalogue tool.\nwhenever you need to recommend clothing, use the available clothes catalogue tool to findd suitable items from the available clothing collection.\n\nDo NOT invent clothing items that are not available in the catalogue when making the main outfit recommendation.\n\nAfter checking the catalogue, create a complete outfit using the most suitable available items. \n\nFor the recommendation, include:\n1. Main Outfit\n2. Why the combination works\n3. Footwear\n4. Accessories\n5. Makeup suggestions when relevant\n6. How to wear/style the outfit  \n\nKeep the response concise and practical and make sure the answer is not more than 250 words.\nUse short sections or bullet points.\nDo not give unnecessary explanations.\n\nDo not recommend clothing that is outside the user's stated budget.\n\nIMPORTANT CATALOGUE RULES:\n\n1. The Available Clothes Catalogue is the source of truth for clothing availability.\n2. Always use the Available Clothes Catalogue tool when selecting clothing items for the outfit.\n3. Treat the user's budget as a HARD LIMIT. Do not recommend an item whose catalogue price exceeds the user's budget.\n4. Only recommend clothing items returned by the catalogue tool as available.\n5. You may suggest accessories, footwear, and makeup separately even if they are not included in the clothing catalogue.\n6. If there are no suitable catalogue items within the user's budget, clearly say that no suitable available item was found instead of inventing one.\n7. Try to create a complete outfit by combining compatible available items rather than simply listing random clothing.\n8. Consider the user's occasion, style, preferred colours, weather, budget, and extra preferences together.\n9. Prefer colour combinations that work well together rather than matching every item to exactly the same colour.\n10. Keep the final recommendation concise and practical.\n\nFINAL RESPONSE FORMAT:\n\n👗 Outfit:\n- Top:\n- Bottom / Dress:\n- Outerwear (if needed):\n\n🎨 Colour combination:\nExplain briefly why the colours work together.\n\n👟 Footwear:\nSuggest suitable footwear.\n\n👜 Accessories:\nSuggest 2–4 suitable accessories.\n\n💄 Makeup:\nGive a short makeup suggestion when appropriate.\n\n✨ How to wear it:\nGive 2–3 practical styling tips.\n\n💰 Estimated clothing cost:\nGive the total price of the recommended catalogue clothing items.\n\n\n{{ $json.Occasion }}{{ $json.Style }}{{ $json['Preferred colours '] }}{{ $json.Budget }}{{ $json.Weather }}{{ $json['Extra preferences'] }}",
+        "options": {
+          "systemMessage": "={{ $json.Occasion }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        96,
+        0
+      ],
+      "id": "719f8ba3-6b34-42b6-a385-80659a7bdc9e",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -48,
+        208
+      ],
+      "id": "eaada912-a9e7-4f90-9064-5184329e8e00",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": null,
+          "name": "",
+          "__aiGatewayManaged": true
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "fashion-stylist-test"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        112,
+        208
+      ],
+      "id": "2320f4b9-04bf-4b73-a4f0-b5cb516e7bea",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "jsCode": "const clothes = [\n  {\n    name: \"Oversized T-shirt\",\n    type: \"top\",\n    colors: [\"white\", \"light blue\"],\n    style: [\"casual\", \"minimal\"],\n    occasion: [\"everyday\", \"college\"],\n    weather: [\"hot\"],\n    price: 699\n  },\n  {\n    name: \"Black Crop Top\",\n    type: \"top\",\n    colors: [\"black\"],\n    style: [\"casual\", \"party\"],\n    occasion: [\"party\", \"evening\", \"casual\"],\n    weather: [\"hot\", \"mild\"],\n    price: 799\n  },\n  {\n    name: \"Burgundy Crop Top\",\n    type: \"top\",\n    colors: [\"burgundy\"],\n    style: [\"party\", \"feminine\"],\n    occasion: [\"party\", \"evening\"],\n    weather: [\"mild\"],\n    price: 899\n  },\n  {\n    name: \"Beige Linen Shirt\",\n    type: \"shirt\",\n    colors: [\"beige\", \"white\"],\n    style: [\"minimal\", \"smart casual\"],\n    occasion: [\"casual\", \"college\", \"brunch\"],\n    weather: [\"hot\"],\n    price: 1299\n  },\n  {\n    name: \"White Button-down Shirt\",\n    type: \"shirt\",\n    colors: [\"white\"],\n    style: [\"minimal\", \"formal\"],\n    occasion: [\"college\", \"office\", \"casual\"],\n    weather: [\"hot\", \"mild\"],\n    price: 1199\n  },\n  {\n    name: \"Emerald Satin Blouse\",\n    type: \"blouse\",\n    colors: [\"emerald green\"],\n    style: [\"elegant\", \"party\"],\n    occasion: [\"party\", \"evening\"],\n    weather: [\"mild\"],\n    price: 1599\n  },\n  {\n    name: \"Pastel Pink Blouse\",\n    type: \"blouse\",\n    colors: [\"pastel pink\"],\n    style: [\"feminine\", \"soft\"],\n    occasion: [\"brunch\", \"casual\", \"date\"],\n    weather: [\"hot\", \"mild\"],\n    price: 1399\n  },\n  {\n    name: \"Light Blue Denim Jacket\",\n    type: \"jacket\",\n    colors: [\"light blue\"],\n    style: [\"casual\", \"streetwear\"],\n    occasion: [\"everyday\", \"college\"],\n    weather: [\"mild\", \"cool\"],\n    price: 1899\n  },\n  {\n    name: \"Black Denim Jacket\",\n    type: \"jacket\",\n    colors: [\"black\"],\n    style: [\"streetwear\", \"casual\"],\n    occasion: [\"casual\", \"college\", \"evening\"],\n    weather: [\"mild\", \"cool\"],\n    price: 1999\n  },\n  {\n    name: \"Chocolate Brown Wide-leg Trousers\",\n    type: \"trousers\",\n    colors: [\"chocolate brown\"],\n    style: [\"smart casual\", \"minimal\"],\n    occasion: [\"college\", \"office\", \"casual\"],\n    weather: [\"mild\"],\n    price: 1699\n  },\n  {\n    name: \"Cream Wide-leg Trousers\",\n    type: \"trousers\",\n    colors: [\"cream\"],\n    style: [\"minimal\", \"smart casual\"],\n    occasion: [\"office\", \"college\", \"brunch\"],\n    weather: [\"hot\", \"mild\"],\n    price: 1599\n  },\n  {\n    name: \"Black Straight Jeans\",\n    type: \"jeans\",\n    colors: [\"black\"],\n    style: [\"casual\", \"minimal\"],\n    occasion: [\"college\", \"everyday\"],\n    weather: [\"mild\", \"cool\"],\n    price: 1799\n  },\n  {\n    name: \"Light Blue Straight Jeans\",\n    type: \"jeans\",\n    colors: [\"light blue\"],\n    style: [\"casual\"],\n    occasion: [\"college\", \"everyday\"],\n    weather: [\"hot\", \"mild\"],\n    price: 1699\n  },\n  {\n    name: \"Olive Cargo Pants\",\n    type: \"pants\",\n    colors: [\"olive green\"],\n    style: [\"streetwear\", \"casual\"],\n    occasion: [\"college\", \"casual\"],\n    weather: [\"mild\", \"hot\"],\n    price: 1499\n  },\n  {\n    name: \"Black Cargo Pants\",\n    type: \"pants\",\n    colors: [\"black\"],\n    style: [\"streetwear\"],\n    occasion: [\"college\", \"casual\"],\n    weather: [\"mild\"],\n    price: 1599\n  },\n  {\n    name: \"Navy Pleated Skirt\",\n    type: \"skirt\",\n    colors: [\"navy blue\", \"white\"],\n    style: [\"preppy\", \"feminine\"],\n    occasion: [\"college\", \"casual\"],\n    weather: [\"hot\", \"mild\"],\n    price: 1299\n  },\n  {\n    name: \"Denim Mini Skirt\",\n    type: \"skirt\",\n    colors: [\"blue\"],\n    style: [\"casual\", \"streetwear\"],\n    occasion: [\"casual\", \"college\"],\n    weather: [\"hot\"],\n    price: 1199\n  },\n  {\n    name: \"Lavender Maxi Dress\",\n    type: \"dress\",\n    colors: [\"lavender\", \"white\"],\n    style: [\"soft\", \"feminine\"],\n    occasion: [\"brunch\", \"casual\", \"date\"],\n    weather: [\"hot\", \"mild\"],\n    price: 1999\n  },\n  {\n    name: \"Wine Red Bodycon Dress\",\n    type: \"dress\",\n    colors: [\"wine red\"],\n    style: [\"party\", \"elegant\"],\n    occasion: [\"party\", \"evening\", \"date\"],\n    weather: [\"mild\"],\n    price: 2299\n  },\n  {\n    name: \"Black Midi Dress\",\n    type: \"dress\",\n    colors: [\"black\"],\n    style: [\"minimal\", \"elegant\"],\n    occasion: [\"party\", \"evening\", \"date\"],\n    weather: [\"mild\"],\n    price: 2199\n  },\n  {\n    name: \"Sage Green Co-ord Set\",\n    type: \"co-ord\",\n    colors: [\"sage green\", \"cream\"],\n    style: [\"minimal\", \"casual\"],\n    occasion: [\"casual\", \"resort\", \"brunch\"],\n    weather: [\"hot\", \"mild\"],\n    price: 1999\n  },\n  {\n    name: \"Black Co-ord Set\",\n    type: \"co-ord\",\n    colors: [\"black\"],\n    style: [\"minimal\", \"party\"],\n    occasion: [\"casual\", \"evening\"],\n    weather: [\"mild\", \"hot\"],\n    price: 2199\n  },\n  {\n    name: \"Charcoal Grey Blazer\",\n    type: \"blazer\",\n    colors: [\"charcoal grey\"],\n    style: [\"formal\", \"smart\"],\n    occasion: [\"office\", \"formal\"],\n    weather: [\"mild\", \"cool\"],\n    price: 2499\n  },\n  {\n    name: \"Beige Blazer\",\n    type: \"blazer\",\n    colors: [\"beige\", \"cream\"],\n    style: [\"minimal\", \"smart casual\"],\n    occasion: [\"office\", \"brunch\", \"formal\"],\n    weather: [\"mild\"],\n    price: 2399\n  },\n  {\n    name: \"Pastel Pink Hoodie\",\n    type: \"hoodie\",\n    colors: [\"pastel pink\"],\n    style: [\"cozy\", \"casual\"],\n    occasion: [\"everyday\", \"college\"],\n    weather: [\"cool\"],\n    price: 1499\n  },\n  {\n    name: \"Grey Hoodie\",\n    type: \"hoodie\",\n    colors: [\"grey\"],\n    style: [\"cozy\", \"streetwear\"],\n    occasion: [\"everyday\", \"college\"],\n    weather: [\"cool\"],\n    price: 1399\n  },\n  {\n    name: \"Mustard Knit Sweater\",\n    type: \"sweater\",\n    colors: [\"mustard yellow\", \"beige\"],\n    style: [\"cozy\", \"casual\"],\n    occasion: [\"everyday\", \"college\"],\n    weather: [\"cool\"],\n    price: 1599\n  },\n  {\n    name: \"Cream Knit Sweater\",\n    type: \"sweater\",\n    colors: [\"cream\"],\n    style: [\"minimal\", \"cozy\"],\n    occasion: [\"everyday\", \"casual\"],\n    weather: [\"cool\"],\n    price: 1699\n  },\n  {\n    name: \"Terracotta Kurta Set\",\n    type: \"kurta set\",\n    colors: [\"terracotta\", \"ivory\"],\n    style: [\"ethnic\", \"elegant\"],\n    occasion: [\"festive\", \"traditional\"],\n    weather: [\"hot\", \"mild\"],\n    price: 1899\n  },\n  {\n    name: \"Ivory Kurta Set\",\n    type: \"kurta set\",\n    colors: [\"ivory\", \"cream\"],\n    style: [\"ethnic\", \"minimal\"],\n    occasion: [\"festive\", \"traditional\", \"casual\"],\n    weather: [\"hot\", \"mild\"],\n    price: 1799\n  }\n];\n\nconst query = ($input.item.json.query || \"\").toLowerCase();\n\nconst budgetMatch = query.match(/(?:₹|rs\\.?|inr)?\\s?(\\d{3,6})/i);\nconst budget = budgetMatch ? Number(budgetMatch[1]) : null;\n\nconst matches = clothes.filter(item => {\n  const searchableText = [\n    item.name,\n    item.type,\n    ...item.colors,\n    ...item.style,\n    ...item.occasion,\n    ...item.weather\n  ].join(\" \").toLowerCase();\n\n  const queryWords = query\n    .split(/[\\s,.-]+/)\n    .filter(word => word.length > 2);\n\n  const keywordMatch = queryWords.some(word =>\n    searchableText.includes(word)\n  );\n\n  const budgetMatchItem = budget ? item.price <= budget : true;\n\n  return keywordMatch && budgetMatchItem;\n});\n\nif (matches.length === 0) {\n  return \"No matching clothing items were found in the available catalogue for this request. Try a different style, colour, occasion, or budget.\";\n}\n\nreturn matches\n  .slice(0, 8)\n  .map(item =>\n    `${item.name} | Type: ${item.type} | Colours: ${item.colors.join(\", \")} | Style: ${item.style.join(\", \")} | Occasion: ${item.occasion.join(\", \")} | Weather: ${item.weather.join(\", \")} | Price: ₹${item.price}`\n  )\n  .join(\"\\n\");"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.3,
+      "position": [
+        256,
+        208
+      ],
+      "id": "45dba4ee-36ee-45da-b623-2742d2170b61",
+      "name": "Code Tool"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "c9f0825c-1b63-45ec-8a03-a24437831aa5",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f13d5ddf672a0f34c24346f8830e89a5291c27be46cb6ae61235d023468a1714"
+  },
+  "nodeGroups": [],
+  "id": "HwphI28Iyf8QXvA4",
+  "tags": []
+}
